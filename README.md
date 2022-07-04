@@ -1,5 +1,4 @@
 # Oracle-One-Alura-Challenge-3
-Portfolio
 Projeto de elaboração de Portfolio , seguindo a abordagem BEM (block, element, modifier), baseada em componentes para o desenvolvimento
 web. A ideia por trás disso é dividir a interface do usuário em blocos independentes.
 Isso torna o desenvolvimento de interface fácil e rápido, mesmo com uma interface
