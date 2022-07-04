@@ -1,0 +1,230 @@
+/*CSS Reset / Normalize*/
+/*Já deixaremos o básico de reset de estilos. Caso queira adicionar mais informações
+coloque nas sessões indicadas*/
+
+:root{
+    /*Insira a variavel das outras cores inspecionando o modelo do figma*/
+    /*Se esforce para trabalhar com variáveis, é uma dica profissional valiosa*/
+   --cor-box-skills: #ffd752;
+   --cor-box-hobbies: #00b637;
+   --cor-box-academic: #7e96e4;
+   --cor-de-link: rgb(54, 54, 54);
+   --cor-back: #fff8d3;
+   --cor-sombra: rgb(129, 129, 129);
+   --cor-titulos: #1b1b1b;
+   --cor-fundo-menu: rgb(255, 186, 57);
+   --cor-fundo-about: rgb(101, 101, 235);
+   --cor-font-about: white;
+   --cor-botoes: #2a7ae4;
+   --cor-botao-hover: rgb(0, 45, 194);
+   --cor-top-botao: #00b637;
+   --cor-top-botao-hover: #007423;
+}
+
+/*Pseudo*/ 
+.grey::placeholder{
+  color:rgb(100, 100, 100);
+}
+
+.red::placeholder{
+  height: 2rem;
+  font-size: var(--h3-font-size);
+  color:red;
+}
+
+body {
+  box-sizing: border-box;
+  /*background-color: var(--cor-fundo-body);*/
+  color: rgb(0, 0, 0);
+  font-family: 'Raleway';
+  /*font-family: 'Comfortaa', cursive;*/
+  font-weight: 400;
+  padding: 0;
+  line-height: 1;
+}
+
+ol, ul,li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--cor-de-link);
+}
+
+/*Neste desafio, gostariamos que praticassem a metodologia BEM, caso se sintam a vontade 
+para utiliza-la. 
+
+Mas o que é o BEM?
+
+BEM (Block, Element, Modifier) ​​é uma abordagem baseada em componentes para o desenvolvimento
+web. A ideia por trás disso é dividir a interface do usuário em blocos independentes.
+Isso torna o desenvolvimento de interface fácil e rápido, mesmo com uma interface
+de usuário complexa, e permite a reutilização de código existente sem copiar e colar.
+
+Link da documentação oficial!
+https://en.bem.info/methodology/quick-start/*/
+
+section {
+  padding: 0 5% 0 5%;
+}
+
+/*Sessão Menu*/
+section.menu{
+  height: 6rem;
+  background-color: var(--cor-fundo-menu);
+}
+
+/*Sessão Title*/
+section.title{
+  padding: 2rem 0 2rem 0;
+}
+
+.perfil {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.perfil-foto {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  background-image: url('../assets/dev-1.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 150px;
+  box-shadow: 10px 20px 15px var(--cor-sombra);
+}
+
+.foto {
+  width: 300px;
+  height: 300px;
+  background-image: url('../assets/hu_1a.png');
+  background-repeat: no-repeat;
+  background-position: 120px 100px;
+  border-radius: 150px;
+}
+
+/*Sessão About*/
+section.about {
+  color: var(--cor-font-about);
+  background-color: var(--cor-fundo-about);
+}
+
+/*Sessão Skills*/
+.skills__box {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cor-box-skills);
+  border-radius: 10px;
+  background-color: var(--cor-box-skills);
+  box-shadow: 10px 10px 15px var(--cor-sombra);
+}
+
+.hobbies__box {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cor-box-hobbies);
+  border-radius: 10px;
+  background-color: var(--cor-box-hobbies);
+  box-shadow: 10px 10px 15px var(--cor-sombra);
+}
+
+/* Experiência Acadêmica*/
+section.academic{
+  margin: 0 0 3rem 0;
+}
+
+.academic__courses__box {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--cor-box-academic);
+  border-radius: 10px;
+  background-color: var(--cor-box-academic);
+  box-shadow: 10px 10px 15px var(--cor-sombra);
+}
+
+/* experiência*/
+section.experience {
+  padding: 2rem 0 2rem 0;
+  color: var(--cor-font-about);
+  background-color: var(--cor-fundo-about);
+}
+
+/*footeer*/
+section.footer {
+  padding: 0;
+}
+
+#topBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 24px;
+  border: none;
+  /*outline: none;*/
+  background-color: var(--cor-top-botao);
+  color: white;
+  cursor: pointer;
+  /*padding: 15px;*/
+  width: 60px;
+  height: 60px;;
+  border-radius: 30px;
+}
+
+#topBtn:hover {
+  background-color: var(--cor-top-botao-hover);
+}
+
+
+
+/* Chegou a hora de se desafiar com a responsividade, 
+utilize como referência os breakpoints @media abaixo*/
+
+/*Tablet*/
+@media (min-width: 768px) {
+
+/* Menu */
+
+/*title*/
+
+/*Skills*/
+
+/*Hobbies*/
+
+/*Experiências acadêmicas*/
+
+/*Expeirência profissional*/
+
+}
+
+/*Mobile*/
+@media (min-width: 425px) {
+
+/*Menu*/
+
+/*Titulo*/
+
+/*Sessão sobre*/
+
+/*Skills*/
+
+/*Hobbies*/
+ 
+/*Formação Acadêmica*/
+
+/*Experiência Profissional*/
+
+ /*Contato*/
+
+/*Footer*/
+
+}
