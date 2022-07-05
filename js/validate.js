@@ -27,43 +27,70 @@ ebtn.addEventListener('click', function(e) {
 });
 
 function validaForm(form) {
-  var ctrl = true;  
-  
-  if (form.nome.value.length == 0) {
-    form.nome.value="";
-    form.nome.placeholder="Preencha o Nome";
-    //clearOtherClasses(form.nome);
-    form.nome.classList.add("red");
-    form.nome.focus();
-    ctrl = false;
+  var vret = true;
+  var campos = [ 
+    [form.nome, 50, false],
+    [form.email, 50, true],
+    [form.assunto, 50, false],
+    [form.mensagem, 300, false]
+  ]
+
+  for(let i = 0; i < campos.length; i++) {
+    var el = campos[i][0];
+    var len = campos[i][1];
+    var log = campos[i][2];
+
+    if (!validaConteudo(el, len, log)) {
+      vret = false;
+      break;
+    }
   }
-  
-  if (form.email.value.length == 0) {
-    form.email.value="";
-    form.email.placeholder="Preencha o Email";
-    //clearOtherClasses(form.email);
-    form.email.classList.add("red");
-    form.email.focus();
-    ctrl = false;
-  }
-  if (form.assunto.value.length == 0) {
-    form.assunto.value="";
-    form.assunto.placeholder="Preencha campo Assunto";
-    //clearOtherClasses(form.assunto);
-    form.assunto.classList.add("red");
-    form.assunto.focus();  
-    ctrl = false;
-  }
-  if (form.mensagem.value.length == 0) {
-    form.mensagem.value="";
-    form.mensagem.placeholder="Preencha campo Mensagem";
-    //clearOtherClasses(form.mensagem);
-    form.mensagem.classList.add("red");
-    form.mensagem.focus();  
-    ctrl = false;
-  }
-  return ctrl;
+
+  return vret;
+
 }
-function clearOtherClasses(element){
-  element.className="";
+
+//Nome, Assunto : não vazio/branco , max 50 caracteres
+//Email : validar por Regex
+//Mensagem : não vazio/branco , max 300caracteres
+//Botão Submit disabled enquanto não valida
+//var form = document.querySelector('.formcontato__form');
+//var btn = document.querySelector('.formcontato__botao');
+//btn.disabled = validaForm(form);
+function validaConteudo(elem, tam, isEmail) {
+  var holder = "";
+  var ctrl = true;
+  if (elem.value.trim().length == 0) {
+    holder = "Campo nao pode ser vazio ou branco !";
+    ctrl = false;
+  } 
+  
+  if (elem.value.trim().length > tam) {
+    holder = "Campo excede " + tam + " letras !";
+    ctrl = false;
+  } 
+
+  if (isEmail) {
+    if (!validaEmail(elem.value)) {
+      holder = "Email invalido !";
+      ctrl = false; 
+    }
+  }
+  
+  if (!ctrl) {
+    elem.value = "";
+    elem.placeholder = holder;
+    elem.classList.add("red");
+    elem.focus();
+  }
+
+  return ctrl; 
+}
+
+function validaEmail(email) {
+  //https://stackabuse.com/validate-email-addresses-with-regular-expressions-in-javascript/
+  let regex = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
+  var vret = regex.test(email); 
+   
+  return vret;  
 }
