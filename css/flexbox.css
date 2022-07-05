@@ -453,13 +453,13 @@ header {
   /*Skills*/
   .skills__line {
     flex-direction: column;  
-    align-items: initial;
+    /*align-items: initial;*/
     text-align: center;
   }
   /*Hobbies*/
   .hobbies__line {
     flex-direction: column;
-    align-items: initial;
+    /*align-items: initial;*/
     text-align: center;
   }
    
