@@ -340,7 +340,7 @@ header {
   section.menu {
     flex-direction: column;
     justify-content: flex-start;
-    height: 20rem;
+    height: 22rem;
   }
 
   header {
@@ -361,7 +361,8 @@ header {
    /* title */
   .title__div {
     flex-direction: column;
-    flex-wrap: wrap;
+    /*flex-wrap: wrap-reverse;*/
+    height: 100vh;
   }
   
   /*Skills*/
@@ -435,7 +436,7 @@ header {
   section.menu {
     flex-direction: column;
     justify-content: flex-start;
-    height: 20rem;
+    height: 22rem;
   }
 
   .menu__list {
