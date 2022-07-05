@@ -71,7 +71,7 @@ section {
 
 /*Sessão Menu*/
 section.menu{
-  width: 100%;
+  width: 90%;
   height: 6rem;
   background-color: var(--cor-fundo-menu);
 }
